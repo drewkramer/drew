@@ -1,10 +1,19 @@
-[build.environment]
-  YARN_VERSION = "1.12.1"
-  NPM_VERSION = "6.4.1"
-
+# Static site — plain HTML + CSS, no build step.
+# Publishes the repo root as-is. The custom domain (drewkramer.co)
+# is configured in the Netlify dashboard.
 [build]
-  command = "npm run build"
-  publish = "dist"
+  publish = "."
+  command = ""
 
-[context.deploy-preview]
-  command = "npm run build:preview"
+# Keep the archived Hugo source out of the live site: return 404 and
+# tell crawlers not to index it (it's still in git history).
+[[redirects]]
+  from = "/archive/*"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[headers]]
+  for = "/archive/*"
+  [headers.values]
+    X-Robots-Tag = "noindex"
