@@ -5,6 +5,16 @@
   publish = "."
   command = ""
 
+# Sensible security defaults for every response.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+
 # Keep the archived Hugo source out of the live site: return 404 and
 # tell crawlers not to index it (it's still in git history).
 [[redirects]]
