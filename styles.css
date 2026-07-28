@@ -174,15 +174,8 @@ body {
 /* ---------- work ---------- */
 .work { margin-top: 3rem; }
 
-.work-group { margin-bottom: 1.5rem; }
+.work-group { margin-bottom: 2.25rem; }
 .work-group:last-child { margin-bottom: 0; }
-
-.work-cat {
-  font-weight: 500;
-  font-size: 1rem;
-  color: var(--muted);
-  margin: 0 0 0.3rem;
-}
 
 .work-list {
   list-style: none;
@@ -191,10 +184,8 @@ body {
 }
 
 .work-list li {
-  padding: 0.55rem 0;
-  border-bottom: 1px solid var(--rule);
+  padding: 0.35rem 0;
 }
-.work-list li:last-child { border-bottom: none; }
 
 .work-name {
   font-size: 1rem;
